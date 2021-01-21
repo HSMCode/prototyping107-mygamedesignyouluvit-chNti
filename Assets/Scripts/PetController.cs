@@ -7,8 +7,9 @@ public class PetController : MonoBehaviour
     public static PetController instance;
 
     public Transform target;
-    public float speed;
+    public float speedDog, speedCat, speedBunny;
     public GameObject loseScreen;
+    public UIManager uiman;
 
     void Start()
     {
@@ -18,7 +19,15 @@ public class PetController : MonoBehaviour
     void Update()
     {
         // Pet moves towards goal
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(uiman.pickedDog == true){
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speedDog * Time.deltaTime);
+        }
+        if(uiman.pickedCat == true){
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speedCat * Time.deltaTime);
+        }
+        if(uiman.pickedBunny == true){
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speedBunny * Time.deltaTime);
+        }
 
         // When it reaches goal show lose screen
         if (transform.position == target.position)

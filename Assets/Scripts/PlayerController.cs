@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(moveInput.x * moveSpeed, rb.velocity.y, moveInput.y * moveSpeed);
         anim.SetFloat("Move Speed", moveInput.x);
 
+
         // Camera Behavior
         if (transform.position.x < 8.5f)
         {
@@ -45,9 +46,29 @@ public class PlayerController : MonoBehaviour
         {
             cam.transform.position = new Vector3(54f, 0f, -10f);
         }
-        else if (transform.position.x >= 65f)
+        else if (transform.position.x >= 65f && transform.position.x < 83f)
         {
             cam.transform.position = new Vector3(72f, 0f, -10f);
+        }
+        else if (transform.position.x >= 83f && transform.position.x < 101f)
+        {
+            cam.transform.position = new Vector3( 89f, 0f, -10f);
+        }
+        else if (transform.position.x >= 101f && transform.position.x < 119f)
+        {
+            cam.transform.position = new Vector3( 107f, 0f,-10f);
+        }
+        else if (transform.position.x >= 119f && transform.position.x < 138f)
+        {
+            cam.transform.position = new Vector3( 125f, 0f,-10f);
+        }
+        else if (transform.position.x >= 138f && transform.position.x < 156f)
+        {
+            cam.transform.position = new Vector3( 143f, 0f,-10f);
+        }
+        else if (transform.position.x >= 156f )
+        {
+            cam.transform.position = new Vector3( 161f, 0f,-10f);
         }
 
         // Interact
