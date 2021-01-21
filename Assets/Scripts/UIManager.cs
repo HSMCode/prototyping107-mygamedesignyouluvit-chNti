@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
      public GameObject dog, cat, bunny, titleScreen, chooseScreen;
+     public bool pickedDog, pickedCat, pickedBunny;
 
     void Start()
     {
@@ -55,6 +56,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        pickedDog = true;
+        pickedCat = false;
+        pickedBunny = false;
+
     }
 
     public void ChooseCat()
@@ -66,6 +71,9 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        pickedDog = false;
+        pickedCat = true;
+        pickedBunny = false;
     }
 
     public void ChooseBunny()
@@ -77,6 +85,9 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        pickedDog = false;
+        pickedCat = false;
+        pickedBunny = true;
         
     }
 

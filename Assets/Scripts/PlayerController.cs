@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    public float moveSpeed;
+    public float moveSpeed, jumpHeight;
     private Rigidbody rb;
     private Vector2 moveInput;
     public Animator anim;
@@ -25,8 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         // Movement
         moveInput.x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector3(moveInput.x * moveSpeed, rb.velocity.y, moveInput.y * moveSpeed);
+        moveInput.y = Input.GetAxisRaw("Vertical");
+        rb.velocity = new Vector3(moveInput.x * moveSpeed, rb.velocity.y, moveInput.y * jumpHeight);
         anim.SetFloat("Move Speed", moveInput.x);
+
 
         // Camera Behavior
         if (transform.position.x < 8.5f)
@@ -48,6 +50,10 @@ public class PlayerController : MonoBehaviour
         else if (transform.position.x >= 65f)
         {
             cam.transform.position = new Vector3(72f, 0f, -10f);
+        }
+        else if (transform.position.x >= 72f, 0f, -10f)
+        {
+            cam.transform.position = new Vector3( , 0f, -10f)
         }
 
         // Interact
