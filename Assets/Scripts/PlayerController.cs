@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    public float moveSpeed, jumpHeight;
+    public float moveSpeed;
     private Rigidbody rb;
     private Vector2 moveInput;
     public Animator anim;
